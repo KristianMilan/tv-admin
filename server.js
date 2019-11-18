@@ -24,6 +24,8 @@ app.post('/link', (req, res) => {
   if (!link)
     return res.sendStatus(400)
 
+  state.link = link
+
   exec(`echo ${link} > /home/pi/display_link.txt`)
   exec('sudo systemctl restart kiosk')
 
