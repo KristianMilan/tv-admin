@@ -19,6 +19,8 @@ app.get('/status', (req, res) => {
 app.post('/link', (req, res) => {
   const { link } = req.body
 
+  console.log('NEW LINK: ' + link)
+
   if (!link)
     return res.sendStatus(400)
 
